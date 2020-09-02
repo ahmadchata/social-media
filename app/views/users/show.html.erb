@@ -7,6 +7,16 @@
         <li><%= invitee.name %> </li>
       <% end %>
     </ul>
+	</article>
+    <article class="timeline">
+    <h3>Requested Invitations:</h3>
+    <ul class="posts">
+      <% @requests.each do |invitee|%>
+          <li><%= invitee.name %> <%= link_to('Accept', invite_path(user_id: invitee.id), method: :put) %></li>
+      <% end %>
+    </ul>
+  </article>
+  <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
       <%= render @posts %>
