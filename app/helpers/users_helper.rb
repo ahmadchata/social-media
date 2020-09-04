@@ -1,6 +1,7 @@
 module UsersHelper
   def invitation_status(invitee)
   	res = ''
+  	return if current_user.id == invitee.id
   	return if current_user.friend?(invitee)
 
   	if current_user.pending_friends.include?(invitee)
