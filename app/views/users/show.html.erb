@@ -1,5 +1,6 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
+  <h2><%= "Name: #{@user.name}" %><small><em><%= invitation_status(@user) %></em></small></h2>
+
   <article class="timeline">
   	<h4>Pending Request:</h4>
   	 <ul class="posts">
