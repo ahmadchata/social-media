@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'validation test' do
+  context 'validation user test' do
 
     it 'ensures password of user is present' do
       user = User.new(name: 'deepesh', email: 'user@gmail.com').save
