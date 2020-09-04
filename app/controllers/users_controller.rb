@@ -23,12 +23,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-  	@user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
 
-  	if current_user.reject_friend(@user)
-  		redirect_to users_path, notice: 'Invitation rejected'
-  	else
-  		redirect_to users_path, alert: 'Something went wrong with the rejection'
-  	end
+    if current_user.reject_friend(@user)
+      redirect_to users_path, notice: 'Invitation rejected'
+    else
+      redirect_to users_path, alert: 'Something went wrong with the rejection'
+    end
   end
 end

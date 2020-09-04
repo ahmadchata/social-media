@@ -2,12 +2,10 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context 'validation user test' do
-
     it 'ensures password of user is present' do
       user = User.new(name: 'deepesh', email: 'dp@gmail.com').save
       expect(user).to eql(false)
     end
-
 
     it 'create a new user' do
       user = User.create(name: 'deepeshh', email: 'dp@gmail.com', password: 'password')
@@ -52,6 +50,5 @@ RSpec.describe User, type: :model do
       @user2.confirm_friend(@user1)
       expect(@user1.friend?(@user2)).to eq(true)
     end
-
   end
 end
