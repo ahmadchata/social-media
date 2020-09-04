@@ -6,8 +6,8 @@ RSpec.describe Post, type: :model do
 
     it do
       should validate_length_of(:content).
-      is_at_most(1000).
-      with_message("maximum 1000 characters allowed.")
+        is_at_most(1000)
+        .with_message('maximum 1000 characters allowed.')
     end
 
     it 'create a new post with related user' do
