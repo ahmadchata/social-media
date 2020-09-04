@@ -7,7 +7,7 @@
           <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
         </span>
         <span class="profile-link">
-          <%= link_to 'Invite', invite_path(user_id: user.id), class: 'profile-link', method: :post %>
+          <%= invitation_status(user)%>
         </span>
       </li>
     <% end %>
