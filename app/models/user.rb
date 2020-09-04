@@ -42,4 +42,9 @@ class User < ApplicationRecord
   def friend?(user)
     friends.include?(user)
   end
+
+  def user_friend
+    f = friends.map{|friend| friend.id } 
+    f << self.id
+  end
 end
