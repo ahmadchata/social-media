@@ -2,9 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   context 'validation post test' do
-    it 'ensures content of post is present' do
-      post1 = Post.new(user_id: 1)
-      expect(post1.save).to eql(false)
+    it { should validate_presence_of(:content) }
+
+    it do
+      should validate_length_of(:content).
+      is_at_most(1000).
+      with_message("maximum 1000 characters allowed.")
     end
 
     it 'create a new post with related user' do
