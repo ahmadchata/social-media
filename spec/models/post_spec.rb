@@ -5,8 +5,8 @@ RSpec.describe Post, type: :model do
     it { should validate_presence_of(:content) }
 
     it do
-      should validate_length_of(:content).
-        is_at_most(1000)
+      should validate_length_of(:content)
+        .is_at_most(1000)
         .with_message('maximum 1000 characters allowed.')
     end
 
