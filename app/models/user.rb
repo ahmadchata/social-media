@@ -16,9 +16,6 @@ class User < ApplicationRecord
     friends_array = friendships.map { |friendship| friendship.friend if friendship.status } +
                     inverse_friendships.map { |friendship| friendship.user if friendship.status }
     friends_array.compact
-    # friends_array = friendships.map { |friendship| friendship.friend if friendship.status }
-    # friends_array + inverse_friendships.map { |friendship| friendship.user if friendship.status }
-    # friends_array.compact
   end
 
   # Users who have yet to confirme friend requests
@@ -38,7 +35,7 @@ class User < ApplicationRecord
   end
 
   def reject_friend(user)
-    friendship = inverse_friendships.find { |friendship| friendship.user == user }
+    friendship = inverse_friendships.find { |friendship| friendship.user == user}
     friendship.destroy
   end
 
