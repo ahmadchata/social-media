@@ -1,12 +1,15 @@
 # Social media
 
-> I added an Entity Relationship Diagram (ERD) in this milestone.
-![image](docs/ERD.jpeg)
+> I added a feature where a user can send friend requests, other users can either accept or reject the request.
 
 ## Built With
 
 - Ruby v2.7.2
 - Ruby on Rails v5.2.4
+
+## Screenshot
+
+![screenshot](.app/assets/images/screenshot.png)
 
 ## Live Demo
 
