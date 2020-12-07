@@ -9,7 +9,7 @@
 
 ## Screenshot
 
-![screenshot](.app/assets/images/screenshot.png)
+![screenshot](./app/assets/images/screenshot.png)
 
 ## Live Demo
 
