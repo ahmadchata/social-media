@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   post 'invite' => 'friendships#create'
-  put 'accept' => 'users#update'
+  put 'invite' => 'users#update'
   delete 'reject' => 'users#destroy'
   delete 'unfriend' => 'friendships#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

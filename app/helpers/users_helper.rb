@@ -6,7 +6,7 @@ module UsersHelper
     if current_user.pending_friends.include?(invitee)
       res << link_to('Pending Request', '#')
     elsif current_user.friend_requests.include?(invitee)
-      res << link_to('Accept', accept_path(user_id: invitee.id), method: :put)
+      res << link_to('Accept', invite_path(user_id: invitee.id), method: :put)
       res << ' | '
       res << link_to('Reject', reject_path(user_id: invitee.id), method: :delete)
     elsif current_user.friend?(invitee) || invitee.friend?(current_user)

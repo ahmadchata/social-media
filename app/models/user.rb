@@ -32,6 +32,7 @@ class User < ApplicationRecord
     friendship = inverse_friendships.find{|friendship| friendship.user == user}
     friendship.confirmed = true
     friendship.save
+    Friendship.create!(user_id: id, friend_id: user.id, confirmed: true)
   end
 
   def reject_friend(user)
@@ -41,5 +42,11 @@ class User < ApplicationRecord
 
   def friend?(user)
     friends.include?(user)
+  end
+
+  def user_friend
+    f = friends.map(&:id)
+    f << id
+    Post.all.where(user_id: f)
   end
 end

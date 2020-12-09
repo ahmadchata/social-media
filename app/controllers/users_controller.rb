@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
 
     if current_user.confirm_friend(@user)
-      redirect_to users_path, notice: 'invitation accepted .'
+      redirect_to users_path, notice: 'Invitation accepted .'
     else
       redirect_to users_path, alert: 'Oops problem with accepting invitation.'
     end
