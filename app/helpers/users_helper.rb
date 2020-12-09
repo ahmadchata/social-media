@@ -9,7 +9,7 @@ module UsersHelper
       res << link_to('Accept', accept_path(user_id: invitee.id), method: :put)
       res << ' | '
       res << link_to('Reject', reject_path(user_id: invitee.id), method: :delete)
-    elsif current_user.friend?(invitee)
+    elsif current_user.friend?(invitee) || invitee.friend?(current_user)
       res << link_to('Friends', '#')
     else
       res << link_to('Add Friend', invite_path(user_id: invitee.id), method: :post)
