@@ -13,8 +13,8 @@ module PostHelper
         my_posts << post
       end
     end
-    current_user.posts.each do |posts|
-      my_posts << p
+    current_user.posts.each do |post|
+      my_posts << post
     end
     my_posts.reverse
   end
