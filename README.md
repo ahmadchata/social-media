@@ -1,6 +1,6 @@
 # Social media
 
-> I added a feature where a user can send friend requests, other users can either accept or reject the request.
+> This a social media website. Users can send friend requests to other users, post and comment on posts
 
 ## Built With
 
@@ -12,8 +12,7 @@
 ![screenshot](./app/assets/images/screenshot.png)
 
 ## Live Demo
-
-TBA
+[Live demo](https://salty-stream-05643.herokuapp.com/)
 
 
 ## Getting Started
@@ -41,16 +40,6 @@ Setup database with:
    rails db:migrate
 ```
 
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
-
-
 ### Usage
 
 Start server with:
@@ -66,11 +55,6 @@ Open `http://localhost:3000/` in your browser.
 ```
     rpsec --format documentation
 ```
-
-> Tests will be added in other milestones. No tests for initial features.
-### Deployment
-
-TBA
 
 ## Authors
 👤 **Ahmad Chata**
@@ -90,8 +74,8 @@ Feel free to check the [issues page](issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
-TBA
+- Microverse
+- Social Media repository: [Repo Link](https://github.com/microverseinc/ror-social-scaffold)
 
 ## 📝 License
 
