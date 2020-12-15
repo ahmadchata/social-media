@@ -26,8 +26,8 @@ class User < ApplicationRecord
 
   def confirm_friend(user)
     friend = Friendship.find_by(user_id: user.id, friend_id: id)
-    friendship.confirmed = true
-    friendship.save
+    friend.confirmed = true
+    friend.save
     Friendship.create!(user_id: id, friend_id: user.id, confirmed: true)
   end
 
@@ -44,5 +44,19 @@ class User < ApplicationRecord
     f = friends.map(&:id)
     f << id
     Post.all.where(user_id: f)
+  end
+
+  def mutual_friends(another_user)
+    mutual_friends = []
+
+    if self != another_user
+      my_friends = friends
+      another_friends = another_user.friends
+      another_friends.each do |i|
+        mutual_friends << i if my_friends.include?(i)
+      end
+    end
+
+    mutual_friends
   end
 end
