@@ -3,8 +3,10 @@
   <span>Friendship status: <%= invite_status(@user) %></span>
   <article class="timeline">
     <h3>Recent posts:</h3>
+    <% if current_user.friends.include?(@user) %>
     <ul class="posts">
       <%= render @posts %>
     </ul>
+    <% end %>
   </article>
 </section>
